@@ -18,6 +18,9 @@
     },
     "catifications-node": {
       "tags": []
+    },
+    "catifications-node-e2e": {
+      "tags": []
     }
   }
 }
