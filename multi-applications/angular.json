@@ -2,13 +2,137 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "catifications-webapp": {
+      "root": "apps/catifications-webapp/",
+      "sourceRoot": "apps/catifications-webapp/src",
+      "projectType": "application",
+      "prefix": "multi-applications",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/catifications-webapp",
+            "index": "apps/catifications-webapp/src/index.html",
+            "main": "apps/catifications-webapp/src/main.ts",
+            "polyfills": "apps/catifications-webapp/src/polyfills.ts",
+            "tsConfig": "apps/catifications-webapp/tsconfig.app.json",
+            "assets": [
+              "apps/catifications-webapp/src/favicon.ico",
+              "apps/catifications-webapp/src/assets"
+            ],
+            "styles": [
+              "apps/catifications-webapp/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/catifications-webapp/src/environments/environment.ts",
+                  "with": "apps/catifications-webapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "catifications-webapp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "catifications-webapp:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "catifications-webapp:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/catifications-webapp/tsconfig.app.json",
+              "apps/catifications-webapp/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/catifications-webapp/jest.config.js",
+            "tsConfig": "apps/catifications-webapp/tsconfig.spec.json",
+            "setupFile": "apps/catifications-webapp/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "catifications-webapp-e2e": {
+      "root": "apps/catifications-webapp-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/catifications-webapp-e2e/cypress.json",
+            "tsConfig": "apps/catifications-webapp-e2e/tsconfig.e2e.json",
+            "devServerTarget": "catifications-webapp:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "catifications-webapp:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
     "defaultCollection": "@nrwl/schematics"
-    
-  }
+  },
+  "defaultProject": "catifications-webapp"
 }

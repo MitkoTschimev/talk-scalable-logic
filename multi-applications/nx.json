@@ -7,5 +7,14 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "catifications-webapp": {
+      "tags": [
+        "webapp"
+      ]
+    },
+    "catifications-webapp-e2e": {
+      "tags": []
+    }
+  }
 }
