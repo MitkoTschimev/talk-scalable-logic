@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/apps/catifications-node",
+    "outDir": "../../dist/apps/catifications-node",
+    "module": "commonjs",
+    "target": "es6",
     "types": ["node"]
   },
   "exclude": ["**/*.spec.ts"],
