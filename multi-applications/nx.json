@@ -15,6 +15,9 @@
     },
     "catifications-webapp-e2e": {
       "tags": []
+    },
+    "catifications-node": {
+      "tags": []
     }
   }
 }

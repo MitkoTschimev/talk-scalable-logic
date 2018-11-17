@@ -125,6 +125,60 @@
           }
         }
       }
+    },
+    "catifications-node": {
+      "root": "apps/catifications-node",
+      "sourceRoot": "apps/catifications-node/src",
+      "projectType": "application",
+      "prefix": "catifications-node",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/catifications-node",
+            "main": "apps/catifications-node/src/main.ts",
+            "tsConfig": "apps/catifications-node/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/catifications-node/src/environments/environment.ts",
+                  "with": "apps/catifications-node/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "catifications-node:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/catifications-node/tsconfig.app.json",
+              "apps/catifications-node/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/catifications-node/jest.config.js",
+            "tsConfig": "apps/catifications-node/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {
