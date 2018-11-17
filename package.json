@@ -1,0 +1,19 @@
+{
+  "name": "scalable-logic-different-applications",
+  "version": "1.0.0",
+  "description": "Scalable logic between different applications like never before",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "speak",
+    "nx"
+  ],
+  "author": "Mitko Tschimev <mitko@dev-thought.cool>",
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/cli": "^7.0.6",
+    "@nrwl/schematics": "^7.0.2"
+  }
+}
