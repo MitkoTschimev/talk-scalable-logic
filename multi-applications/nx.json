@@ -10,29 +10,30 @@
   "projects": {
     "catifications-webapp": {
       "tags": [
-        "webapp"
+        "webapp",
+        "team:core"
       ]
     },
     "catifications-webapp-e2e": {
-      "tags": []
+      "tags": ["team:core"]
     },
     "catifications-node": {
-      "tags": []
+      "tags": ["team:api"]
     },
     "catifications-node-e2e": {
-      "tags": []
+      "tags": ["team:api"]
     },
     "shared-cat-utils": {
-      "tags": []
+      "tags": ["team:core"]
     },
     "second-team-cats-todo": {
-      "tags": []
+      "tags": ["team:second"]
     },
     "second-team-cats-todo-e2e": {
-      "tags": []
+      "tags": ["team:second"]
     },
     "second-team-utils": {
-      "tags": []
+      "tags": ["team:second"]
     }
   }
 }
