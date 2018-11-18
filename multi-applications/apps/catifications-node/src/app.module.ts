@@ -18,6 +18,6 @@ export class AppModule {
       preflightContinue: false,
       optionsSuccessStatus: 204
     });
-    consumer.apply(CorsMiddleware).forRoutes('cats');
+    consumer.apply(CorsMiddleware).forRoutes('cats', 'todos', 'todos/:id');
   }
 }

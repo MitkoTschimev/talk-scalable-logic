@@ -18,6 +18,9 @@
     "paths": {
       "@multi-applications/shared/cat-utils": [
         "libs/shared/cat-utils/src/index.ts"
+      ],
+      "@multi-applications/second-team/utils": [
+        "libs/second-team/utils/src/index.ts"
       ]
     }
   },

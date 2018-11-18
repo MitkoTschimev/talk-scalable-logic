@@ -232,6 +232,161 @@
           }
         }
       }
+    },
+    "second-team-cats-todo": {
+      "root": "apps/second-team/cats-todo/",
+      "sourceRoot": "apps/second-team/cats-todo/src",
+      "projectType": "application",
+      "prefix": "multi-applications",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/second-team/cats-todo",
+            "index": "apps/second-team/cats-todo/src/index.html",
+            "main": "apps/second-team/cats-todo/src/main.ts",
+            "polyfills": "apps/second-team/cats-todo/src/polyfills.ts",
+            "tsConfig": "apps/second-team/cats-todo/tsconfig.app.json",
+            "assets": [
+              "apps/second-team/cats-todo/src/favicon.ico",
+              "apps/second-team/cats-todo/src/assets"
+            ],
+            "styles": [
+              "apps/second-team/cats-todo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/second-team/cats-todo/src/environments/environment.ts",
+                  "with": "apps/second-team/cats-todo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "second-team-cats-todo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "second-team-cats-todo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "second-team-cats-todo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/second-team/cats-todo/src/test.ts",
+            "polyfills": "apps/second-team/cats-todo/src/polyfills.ts",
+            "tsConfig": "apps/second-team/cats-todo/tsconfig.spec.json",
+            "karmaConfig": "apps/second-team/cats-todo/karma.conf.js",
+            "styles": [
+              "apps/second-team/cats-todo/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/second-team/cats-todo/src/favicon.ico",
+              "apps/second-team/cats-todo/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/second-team/cats-todo/tsconfig.app.json",
+              "apps/second-team/cats-todo/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "second-team-cats-todo-e2e": {
+      "root": "apps/second-team/cats-todo-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/second-team/cats-todo-e2e/protractor.conf.js",
+            "devServerTarget": "second-team-cats-todo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "second-team-cats-todo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/second-team/cats-todo-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "second-team-utils": {
+      "root": "libs/second-team/utils",
+      "sourceRoot": "libs/second-team/utils/src",
+      "projectType": "library",
+      "prefix": "multi-applications",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/second-team/utils/src/test.ts",
+            "tsConfig": "libs/second-team/utils/tsconfig.spec.json",
+            "karmaConfig": "libs/second-team/utils/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/second-team/utils/tsconfig.lib.json",
+              "libs/second-team/utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

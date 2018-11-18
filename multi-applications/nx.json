@@ -24,6 +24,15 @@
     },
     "shared-cat-utils": {
       "tags": []
+    },
+    "second-team-cats-todo": {
+      "tags": []
+    },
+    "second-team-cats-todo-e2e": {
+      "tags": []
+    },
+    "second-team-utils": {
+      "tags": []
     }
   }
 }
