@@ -192,13 +192,13 @@
           "builder": "@nrwl/builders:jest",
           "options": {
             "jestConfig": "apps/catifications-node-e2e/jest.config.js",
-            "tsConfig": "apps/catifications-node-e2e/tsconfig.e2e.json"
+            "tsConfig": "apps/catifications-node-e2e/tsconfig.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/catifications-node-e2e/tsconfig.e2e.json",
+            "tsConfig": "apps/catifications-node-e2e/tsconfig.json",
             "exclude": [
               "**/node_modules/**"
             ]

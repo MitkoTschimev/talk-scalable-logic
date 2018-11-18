@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class CatsService {
   constructor(private http: HttpClient) {}
 
-  getCatList(host?: string): Observable<Cat[]> {
+  getCatList(): Observable<Cat[]> {
     return this.http.get<Cat[]>('http://localhost:3000/cats');
   }
 }

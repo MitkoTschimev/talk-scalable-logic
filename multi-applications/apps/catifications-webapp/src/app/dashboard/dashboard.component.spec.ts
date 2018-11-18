@@ -10,6 +10,7 @@ import {
 } from '@angular/material';
 
 import { DashboardComponent } from './dashboard.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -26,6 +27,7 @@ describe('DashboardComponent', () => {
         MatGridListModule,
         MatIconModule,
         MatMenuModule,
+        HttpClientTestingModule
       ]
     }).compileComponents();
   }));
