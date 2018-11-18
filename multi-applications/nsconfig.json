@@ -1,0 +1,7 @@
+{
+  "appResourcesPath": "apps/catifications-webapp/App_Resources",
+  "appPath": "apps/catifications-webapp/src",
+  "nsext": ".tns",
+  "webext": "",
+  "shared": true
+}

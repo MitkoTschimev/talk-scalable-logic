@@ -138,7 +138,10 @@
           "options": {
             "outputPath": "dist/apps/catifications-node",
             "main": "apps/catifications-node/src/main.ts",
-            "tsConfig": "apps/catifications-node/tsconfig.app.json"
+            "tsConfig": "apps/catifications-node/tsconfig.app.json",
+            "assets": [
+              "apps/catifications-node/src/public"
+            ]
           },
           "configurations": {
             "production": {
@@ -205,11 +208,7 @@
     }
   },
   "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nativescript/schematics"
   },
   "defaultProject": "catifications-webapp"
 }

@@ -1,11 +1,11 @@
 <div class="grid-container">
   <h1 class="mat-h1">All Cats</h1>
   <mat-grid-list cols="2" rowHeight="600px">
-    <mat-grid-tile *ngFor="let card of cards" [colspan]="isHandset ? 2 : 1" rowspan="1">
+    <mat-grid-tile *ngFor="let cat of cats" [colspan]="isHandset ? 2 : 1" rowspan="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
+            {{cat.name}}
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -14,10 +14,10 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="card.image" alt="card.title">
+        <img mat-card-image [src]="cat.image" alt="cat.name">
         <mat-card-content class="dashboard-card-content">
           <p>
-            {{card.description}}
+            {{cat.description}}
           </p>
         </mat-card-content>
       </mat-card>

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'multi-applications-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
   cats = [
@@ -15,13 +14,4 @@ export class DashboardComponent {
     { name: 'Coco', image: 'https://public-vapxwpcpxj.now.sh/coco.png' },
     { name: 'Pitbull', image: 'https://public-vapxwpcpxj.now.sh/pitbull.png' }
   ];
-
-  /** Based on the screen size, switch from standard to one column per row */
-  isHandset: boolean;
-
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver
-      .observe(Breakpoints.Handset)
-      .subscribe(({ matches }) => (this.isHandset = matches));
-  }
 }
