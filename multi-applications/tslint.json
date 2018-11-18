@@ -94,8 +94,18 @@
       true,
       {
         "allow": [],
-        "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+        "depConstraints": [{
+            "sourceTag": "team:core",
+            "onlyDependOnLibsWithTags": ["team:core", "shared"]
+          },
+          {
+            "sourceTag": "team:second",
+            "onlyDependOnLibsWithTags": ["team:second", "shared"]
+          },
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
         ]
       }
     ]

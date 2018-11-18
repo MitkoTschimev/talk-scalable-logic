@@ -24,7 +24,7 @@
       "tags": ["team:api"]
     },
     "shared-cat-utils": {
-      "tags": ["team:core"]
+      "tags": ["team:core", "shared"]
     },
     "second-team-cats-todo": {
       "tags": ["team:second"]
