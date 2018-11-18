@@ -1,13 +1,12 @@
 <GridLayout tkExampleTitle tkToggleNavButton>
-    <RadListView [items]="cats">
-        <ng-template tkListItemTemplate let-item="item">
+    <RadListView [items]="cats$ | async">
+        <ng-template tkListItemTemplate let-cat="item">
             <GridLayout class="listItemTemplateGrid">
-                <Image [src]="item.image" stretch="aspectFill"></Image>
-                <FrescoDrawee *tkIfAndroid horizontalAlignment="stretch" height="250" [imageUri]="item.image" verticalAlignment="top"></FrescoDrawee>
+                <Image [src]="cat.image" stretch="aspectFill"></Image>
+                <FrescoDrawee *tkIfAndroid horizontalAlignment="stretch" height="250" [imageUri]="cat.image" verticalAlignment="top"></FrescoDrawee>
                 <GridLayout verticalAlignment="bottom">
                     <StackLayout class="labelsStackLayout">
-                        <Label [text]="item.name" textWrap="true"></Label>
-                        <!-- <Label [text]="item.name"></Label> -->
+                        <Label [text]="cat.name" textWrap="true"></Label>
                     </StackLayout>
                 </GridLayout>
             </GridLayout>

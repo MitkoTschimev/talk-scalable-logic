@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Cat } from '@multi-applications/shared/cat-utils';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'multi-applications-dashboard',
@@ -6,12 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  cats = [
-    { name: 'Daria', image: 'https://public-vapxwpcpxj.now.sh/daria.png', description: 'Best partner for cuddling' },
-    { name: 'Cappuccina', image: 'https://public-vapxwpcpxj.now.sh/cappuccina.png', description: 'Lovely Mommy' },
-    { name: 'Koala', image: 'https://public-vapxwpcpxj.now.sh/koala.png' },
-    { name: 'Pumpkin', image: 'https://public-vapxwpcpxj.now.sh/pumpkin.png' },
-    { name: 'Coco', image: 'https://public-vapxwpcpxj.now.sh/coco.png' },
-    { name: 'Pitbull', image: 'https://public-vapxwpcpxj.now.sh/pitbull.png' }
-  ];
+  cats$ = this.http.get<Cat[]>('http://localhost:3000/cats');
+  constructor(private http: HttpClient) {}
 }

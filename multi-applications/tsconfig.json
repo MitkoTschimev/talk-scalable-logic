@@ -16,6 +16,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@multi-applications/shared/cat-utils": [
+        "libs/shared/cat-utils/src/index.ts"
+      ]
     }
   },
   "exclude": [

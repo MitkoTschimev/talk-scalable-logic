@@ -205,6 +205,33 @@
           }
         }
       }
+    },
+    "shared-cat-utils": {
+      "root": "libs/shared/cat-utils",
+      "sourceRoot": "libs/shared/cat-utils/src",
+      "projectType": "library",
+      "prefix": "multi-applications",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/cat-utils/tsconfig.lib.json",
+              "libs/shared/cat-utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/cat-utils/jest.config.js",
+            "tsConfig": "libs/shared/cat-utils/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {

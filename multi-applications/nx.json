@@ -21,6 +21,9 @@
     },
     "catifications-node-e2e": {
       "tags": []
+    },
+    "shared-cat-utils": {
+      "tags": []
     }
   }
 }

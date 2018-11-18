@@ -1,7 +1,7 @@
 <div class="grid-container">
   <h1 class="mat-h1">All Cats</h1>
   <mat-grid-list cols="2" rowHeight="600px">
-    <mat-grid-tile *ngFor="let cat of cats" [colspan]="isHandset ? 2 : 1" rowspan="1">
+    <mat-grid-tile *ngFor="let cat of cats | async" [colspan]="isHandset ? 2 : 1" rowspan="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
